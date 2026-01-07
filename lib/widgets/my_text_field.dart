@@ -16,9 +16,8 @@ class MyTextField extends StatelessWidget {
           decoration: InputDecoration(
             border: InputBorder.none,
             prefixIcon: Icon(Icons.search),
-            suffixIcon: Icon(Icons.tune_outlined),
+            suffixIcon: Icon(Icons.tune_outlined, color: Colors.blueGrey),
             hintText: "Search..",
-
             hintStyle: TextStyle(color: Colors.grey, fontSize: 17),
           ),
         ),
