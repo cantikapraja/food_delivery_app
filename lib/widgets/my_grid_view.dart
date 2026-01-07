@@ -29,7 +29,12 @@ class MyGridView extends StatelessWidget {
                     Container(width: 10),
                     Row(
                       children: [
-                        Icon(Icons.star, size: 18),
+                        Icon(
+                          Icons.star,
+                          size: 18,
+                          color: Colors.yellow.shade800,
+                        ),
+                        const SizedBox(width: 3),
                         Text(
                           "4.5",
                           style: TextStyle(
@@ -54,7 +59,10 @@ class MyGridView extends StatelessWidget {
                         ),
                         Text(
                           "\$8.5",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
                       ],
                     ),
