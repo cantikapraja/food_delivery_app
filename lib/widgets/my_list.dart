@@ -7,7 +7,7 @@ class MyList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: 50,
       child: ListView.separated(
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
@@ -27,7 +27,7 @@ class MyList extends StatelessWidget {
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
                     myList[index].name,
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
