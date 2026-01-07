@@ -1,23 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/models/my_list_model.dart';
 
-class MyList extends StatefulWidget {
+class MyList extends StatelessWidget {
   const MyList({super.key});
 
   @override
-  State<MyList> createState() => _MyListState();
-}
-
-class _MyListState extends State<MyList> {
-  @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      itemBuilder: (context, index) {
-        return Container(child: Text("All"));
-      },
-      separatorBuilder: (context, index) {
-        return Padding(padding: const EdgeInsets.all(15));
-      },
-      itemCount: 5,
+    return SizedBox(
+      height: 60,
+      child: ListView.separated(
+        physics: const BouncingScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(50),
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 30,
+                  offset: Offset(0, 0),
+                  color: Colors.grey.shade200,
+                ),
+              ],
+            ),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  child: Text(
+                    myList[index].name,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+        separatorBuilder: (context, index) {
+          return Padding(padding: const EdgeInsets.only(right: 10));
+        },
+        itemCount: myList.length,
+      ),
     );
   }
 }
