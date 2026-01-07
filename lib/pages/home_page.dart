@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/widgets/my_grid_view.dart';
 import 'package:my_app/widgets/my_list.dart';
 import 'package:my_app/widgets/my_text_field.dart';
 
@@ -10,7 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[150],
+      backgroundColor: Colors.grey[200],
       body: SafeArea(
         child: Center(
           child: Padding(
@@ -54,14 +55,37 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 MyList(),
-                const SizedBox(height: 10),
+                const SizedBox(height: 15),
 
                 //CATEGORIES SECTION
-                
+                Expanded(child: MyGridView()),
               ],
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home, size: 30),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_outline, size: 30),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat_outlined, size: 30),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outlined, size: 30),
+            label: "Home",
+          ),
+        ],
       ),
     );
   }
